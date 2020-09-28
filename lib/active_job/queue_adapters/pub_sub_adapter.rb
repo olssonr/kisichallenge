@@ -5,7 +5,7 @@ module ActiveJob
     class PubSubAdapter
       def initialize
         @project = 'handy-operation-290414'
-        @topic_name = 'my-topic2'
+        @topic_name = 'events'
 
         @pubsub = Google::Cloud::Pubsub.new project: @project
         @topic = @pubsub.topic  @topic_name
