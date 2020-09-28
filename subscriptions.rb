@@ -15,9 +15,14 @@ pubsub = Google::Cloud::Pubsub.new project: project_id
 
 subscription = pubsub.subscription subscription_name
 subscriber   = subscription.listen do |received_message|
-  # TODO: pub/sub had min 5 delivery attemps
-  # perhaps can use message.delivery_attempt to nack messages after 3 attempts?
   puts "Received message at attempt: #{received_message.delivery_attempt}"
+
+  if received_message.delivery_attempt > 3
+    received_message.reject!
+    puts "Rejecting message cause max 3 attempts are allowed"
+    next
+  end
+
   begin
     ActiveJob::Base.execute ActiveSupport::JSON.decode(received_message.data)
     received_message.acknowledge!
