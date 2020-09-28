@@ -4,7 +4,7 @@ class LogDoorJob < ApplicationJob
   queue_as :default
 
   def perform(door, event)
-    puts "Door: #{door} was #{event}"
+    puts "#{door} was #{event}"
     raise Exception, "just want to test retries and morgue"
   end
 end

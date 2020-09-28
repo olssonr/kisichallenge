@@ -4,6 +4,6 @@ class EventController < ApplicationController
 
   def create
     puts "Queue Job with #{params[:event]}"
-    LogDoorJob.perform_later("door1", params[:event])
+    LogDoorJob.perform_later("Door 1", params[:event])
   end
 end

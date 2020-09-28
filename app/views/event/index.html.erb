@@ -1,6 +1,6 @@
 <h1>Add event to Queue</h1>
 <%= form_with(url: event_create_path, method: "post") do %>
   <%= label_tag(:event, "Event:") %>
-  <%= text_field_tag(:event) %>
+  <%= text_field_tag(:event, "was opened by Carl") %>
   <%= submit_tag("Queue Event") %>
 <% end %>
