@@ -5,6 +5,6 @@ class LogDoorJob < ApplicationJob
 
   def perform(door, event)
     puts "#{door} was #{event}"
-    raise Exception, "just want to test retries and morgue"
+    #raise Exception, "just want to test retries and morgue"
   end
 end
