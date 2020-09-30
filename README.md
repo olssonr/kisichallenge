@@ -3,11 +3,12 @@
 - [x] Transparent enqueing with ActiveJob to Google Pub/Sub
 - [ ] Adapter configuration
 - [x] Worker script that subscribes to Pub/Sub and executes ActiveJobs
+- [x] Rake task for worker script
 - [ ] Pretty worker script
 - [x] Retry 3 times if job fails
 - [x] Retry at least 5 minutes apart
 - [x] Move messages to dead letter queue after max retries
-- [ ] Collect Jobs performed total count and duration with ActiveSupport::Instrumentation
+- [x] Collect Jobs performed total count and duration with ActiveSupport::Instrumentation
 - [x] README
 
 ## Rails Sever
@@ -26,6 +27,8 @@
     2. In the console run `Kisichallenge::Application.load_tasks`
     3. In the console run `Rake::Task["jobs:subscribe"].invoke`
 4. If you queue messages now they should be performed and counted
+    1. To queue messages go to http://localhost:3000
+    2. To view metrics for the Active Jobs go to http://localhost:3000/metrics
 
 ## How to configure Google Pub/Sub
 
