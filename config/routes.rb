@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :metrics
   root 'event#index'
   get 'event/index'
   post 'event/create'
