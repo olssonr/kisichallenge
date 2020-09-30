@@ -21,7 +21,7 @@
 
 1. Configure subscription.rb with your google pub sub information.
 2. Set GOOGLE_APPLICATION_CREDENTIALS to your service-account file e.g. export GOOGLE_APPLICATION_CREDENTIALS=/files_on_your_computer/service-account-file.json
-3. Run ruby subscription.rb
+3. Run `rake jobs:subscribe` to start the subscription
 4. It will start to consume messages
 
 ## How to configure Google Pub/Sub
