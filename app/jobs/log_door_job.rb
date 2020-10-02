@@ -6,6 +6,7 @@ class LogDoorJob < ApplicationJob
   def perform(door, event)
     sleep 1
     puts "#{door} was #{event}"
+    # Todo here we can fetch the event and update the status
     #raise Exception, "just want to test retries and morgue"
   end
 end
