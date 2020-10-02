@@ -11,8 +11,8 @@ class EventController < ApplicationController
   # list all events per door for example
   def create
     puts "Queue Job with #{params[:event]}"
-    LogDoorJob.perform_later("Door 1", params[:event])
     event = Event.new(message: "Door 1#{params[:event]}", status: "Enqueued")
     event.save!
+    LogDoorJob.perform_later(event)
   end
 end

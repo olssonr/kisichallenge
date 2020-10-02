@@ -24,7 +24,7 @@ namespace :jobs do
         received_message.acknowledge!
         puts "Acknowledged message"
       rescue Exception => e
-        puts "Got Exception, rejects message so will be rerun"
+        puts "Got Exception, rejects message so will be rerun #{e.inspect}"
         received_message.reject!
       end
     end
