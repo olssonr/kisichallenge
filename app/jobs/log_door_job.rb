@@ -8,7 +8,7 @@ class LogDoorJob < ApplicationJob
 
   def perform(event)
     sleep 1
-    raise "Just want to test retries and morgue" if rand(1...100) > 50
+    raise "Just want to test retries and morgue" if rand(1...100) > 25
     puts "#{event.id}: #{event.message}"
   end
 end

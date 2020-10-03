@@ -19,7 +19,7 @@ namespace :jobs do
 
     subscriber.start
 
-    sleep 600
+    sleep 6000
     subscriber.stop.wait!
   end
 
