@@ -22,10 +22,7 @@
 
 1. Configure subscription.rb with your google pub sub information.
 2. Set GOOGLE_APPLICATION_CREDENTIALS to your service-account file e.g. export GOOGLE_APPLICATION_CREDENTIALS=/files_on_your_computer/service-account-file.json
-3. Start the subscription in the rails environment. The reason we need to do this is to be able to subscribe to notifications from ActiveSupport.
-    1. Start a rails console e.g `bin/rails console`
-    2. In the console run `Kisichallenge::Application.load_tasks`
-    3. In the console run `Rake::Task["jobs:subscribe"].invoke`
+3. Start the subscription in the rails environment: `bin/rails jobs:subscribe`
 4. If you queue messages now they should be performed and counted
     1. To queue messages go to http://localhost:3000
     2. To view metrics for the Active Jobs go to http://localhost:3000/metrics
